@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning wheel dh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img src="logo-fullhd-white.png" alt="">
+
+    <div id="mainbox" class="mainbox">
+        <div id="box" class="box">
+            <div class="box1">
+                <span class="span1"><b>0</b></span>
+                <span class="span2" id="vinst"><b>1</b></span>
+                <span class="span3" id="vinst"><b>2</b></span>
+                <span class="span4" id="vinst"><b>3</b></span>
+            </div>
+            <div class="box2">
+                <span class="span1" id="vinst"><b>1</b></span>
+                <span class="span2"><b>0</b></span>
+                <span class="span3"><b>0</b></span>
+                <span class="span4" id="vinst"><b>1</b></span>
+            </div>
+        </div>
+
+        <button class="spin" onclick="myfunction()">SNURRA</button>
+    </div>
+    <script>
+
+        function myfunction() {
+
+            var x = 3000; //min värde 
+            var y = 9999; //max värde
+
+            var deg = Math.floor(Math.random() * (x-y)) + y;
+
+            document.getElementById('box').style.transform = "rotate("+deg+"deg)";
+
+
+            var element = document.getElementById('mainbox');
+            element.classList.remove('animate');
+            setTimeout(function(){
+                element.classList.add('animate');
+            }, 5000); //5000 = 5 sekunder
+        }
+
+    </script>
+</body>
+</html>
